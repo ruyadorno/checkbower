@@ -8,7 +8,7 @@ describe('checkbower', function () {
   });
 
   it('should return true when using a valid bower.json', function () {
-    assert.equal(checkbower('./samples/bower.json'), true);
+    assert.equal(checkbower('./test/samples/bower.json'), true);
   });
 
 });
