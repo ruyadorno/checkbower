@@ -4,11 +4,12 @@ var checkbower = require('../lib/checkbower.js');
 describe('checkbower', function () {
 
   it('should return false if bower.json does not exist', function () {
-    assert(checkbower(), false);
+    assert.equal(checkbower(), false);
   });
 
   it('should return true when using a valid bower.json', function () {
-    assert(checkbower('./samples/bower.json'), true);
+    assert.equal(checkbower('./samples/bower.json'), true);
   });
 
 });
+
