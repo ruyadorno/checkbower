@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var checkbower = require('../lib/checkbower.js')
+checkbower( process.argv.slice(2) );
