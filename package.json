@@ -1,0 +1,27 @@
+{
+  "name": "checkbower",
+  "version": "0.0.0",
+  "description": "Validates your bower.json file",
+  "main": "lib/checkbower.js",
+  "bin": "bin/checkbower",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruyadorno/checkbower.git"
+  },
+  "keywords": [
+    "bower",
+    "check",
+    "validate",
+    "validation",
+    "check-bower"
+  ],
+  "author": "Ruy Adorno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruyadorno/checkbower/issues"
+  },
+  "dependencies": {}
+}
