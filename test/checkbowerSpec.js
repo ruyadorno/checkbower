@@ -11,5 +11,17 @@ describe('checkbower', function () {
     assert.equal(checkbower('./test/samples/bower.json'), true);
   });
 
+  it('should return false when bower.json does not have a valid name', function () {
+    assert.equal(checkbower('./test/samples/no_name.json'), false);
+  });
+
+  it('should return false when bower.json does not have a valid version', function () {
+    assert.equal(checkbower('./test/samples/no_version.json'), false);
+  });
+
+  it('should return false when the version number is not valid', function () {
+    assert.equal(checkbower('./test/samples/invalid_version.json'), false);
+  });
+
 });
 
