@@ -23,7 +23,9 @@
   "bugs": {
     "url": "https://github.com/ruyadorno/checkbower/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "semver": ">=2.2.0"
+  },
   "devDependencies": {
     "mocha": ">=1.17.0"
   }
