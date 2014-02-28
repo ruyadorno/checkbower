@@ -1,6 +1,6 @@
 {
   "name": "checkbower",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Validates your bower.json file",
   "main": "lib/checkbower.js",
   "bin": "bin/checkbower",
