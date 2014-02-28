@@ -1,4 +1,8 @@
 #!/usr/bin/env node
 
-var checkbower = require('../lib/checkbower.js')
-checkbower( process.argv.slice(2) );
+var checkbower = require('../lib/checkbower.js');
+if ( checkbower(process.argv.slice(2)[0]) ) {
+  console.log('Valid bower.json found');
+} else {
+  console.log('Error! Could not validate bower.json');
+}
