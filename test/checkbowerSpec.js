@@ -25,3 +25,43 @@ describe('checkbower', function () {
 
 });
 
+describe('checkbower.cli', function () {
+
+  var consoleLog;
+  var outputValue;
+
+  before(function () {
+
+    // monkeypatching console.log here for testing
+    consoleLog = console.log;
+    console.log = function (data) {
+      outputValue = data;
+    };
+
+  });
+
+  after(function () {
+
+    // release the monkeypatching
+    console.log = consoleLog;
+
+  });
+
+  it('should print success message for valid bower.json file', function () {
+
+    checkbower.cli('./test/samples/bower.json');
+
+    assert.equal(outputValue, 'Valid bower.json found');
+
+  });
+
+  it('should print error message for invalid bower.json file', function () {
+
+    checkbower.cli('./test/samples/invalid_version.json');
+
+    assert.equal(outputValue, 'Error! Could not validate bower.json');
+
+  });
+
+});
+
