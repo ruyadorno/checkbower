@@ -51,7 +51,7 @@ describe('checkbower.cli', function () {
 
     checkbower.cli('./test/samples/bower.json');
 
-    assert.equal(outputValue, 'Valid bower.json found');
+    assert.equal(outputValue, checkbower.succesMessage);
 
   });
 
@@ -59,7 +59,7 @@ describe('checkbower.cli', function () {
 
     checkbower.cli('./test/samples/invalid_version.json');
 
-    assert.equal(outputValue, 'Error! Could not validate bower.json');
+    assert.equal(outputValue, checkbower.errorMessage);
 
   });
 
