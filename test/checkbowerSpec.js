@@ -36,22 +36,33 @@ describe('checkbower', function () {
 describe('checkbower.cli', function () {
 
   var consoleLog;
+  var consoleError;
+  var exit;
   var outputValue;
+  var exitValue;
 
   before(function () {
 
-    // monkeypatching console.log here for testing
+    // monkeypatching console here for testing
     consoleLog = console.log;
-    console.log = function (data) {
+    consoleError = console.error;
+    console.log = console.error = function (data) {
       outputValue = data;
+    };
+    // also avoiding exiting the program when testing
+    exit = process.exit;
+    process.exit = function (code) {
+      exitValue = code;
     };
 
   });
 
   after(function () {
 
-    // release the monkeypatching
+    // release monkeypatching
+    process.exit = exit;
     console.log = consoleLog;
+    console.Error = consoleError;
 
   });
 
@@ -72,6 +83,22 @@ describe('checkbower.cli', function () {
     checkbower.cli(filename);
 
     assert.equal(outputValue, checkbower._errorMessage(filename));
+
+  });
+
+  it('should exit program with success code when using a valid bower.json file', function () {
+
+    checkbower.cli('./test/samples/bower.json');
+
+    assert.equal(exitValue, 0);
+
+  });
+
+  it('should exit program with error code when using an invalid bower.json file', function () {
+
+    checkbower.cli('./test/samples/no_name.json');
+
+    assert.equal(exitValue, 1);
 
   });
 
