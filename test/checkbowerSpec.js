@@ -23,6 +23,14 @@ describe('checkbower', function () {
     assert.equal(checkbower('./test/samples/invalid_version.json'), false);
   });
 
+  it('should find and validate bower.json file when using a folder path', function () {
+    assert.equal(checkbower('./test/samples/'), true);
+  });
+
+  it('should find and return false for a unvalid bower.json file when using a folder path', function () {
+    assert.equal(checkbower('./test/samples/test_path/'), false);
+  });
+
 });
 
 describe('checkbower.cli', function () {
