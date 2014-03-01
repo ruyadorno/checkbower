@@ -49,17 +49,21 @@ describe('checkbower.cli', function () {
 
   it('should print success message for valid bower.json file', function () {
 
-    checkbower.cli('./test/samples/bower.json');
+    var filename = './test/samples/bower.json';
 
-    assert.equal(outputValue, checkbower.succesMessage);
+    checkbower.cli(filename);
+
+    assert.equal(outputValue, checkbower._succesMessage(filename));
 
   });
 
   it('should print error message for invalid bower.json file', function () {
 
-    checkbower.cli('./test/samples/invalid_version.json');
+    var filename = './test/samples/invalid_version.json';
 
-    assert.equal(outputValue, checkbower.errorMessage);
+    checkbower.cli(filename);
+
+    assert.equal(outputValue, checkbower._errorMessage(filename));
 
   });
 
