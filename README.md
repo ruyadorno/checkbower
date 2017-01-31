@@ -5,7 +5,7 @@ v0.2.1
 
 Validates your bower.json file
 
-[![Build Status](https://travis-ci.org/ruyadorno/checkbower.png?branch=master)](https://travis-ci.org/ruyadorno/checkbower)
+[![Build Status](https://travis-ci.org/ruyadorno/checkbower.svg?branch=master)](https://travis-ci.org/ruyadorno/checkbower) ![Project frozen](https://img.shields.io/badge/status-frozen-blue.svg) ![Project unmaintained](https://img.shields.io/badge/project-unmaintained-red.svg)
 
 
 ## About
